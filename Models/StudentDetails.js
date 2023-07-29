@@ -7,19 +7,19 @@ const StudentSchema = new mongoose.Schema(
       required: true,
     },
     mentor: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Mentor",
+      id: String,
+      name: String,
     },
     PreviousMentor: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Mentor",
+        id: String,
+        name: String,
       },
     ],
   },
   { collection: "Student" }
 );
 
-const StudentDetails = mongoose.model("Moogoose", StudentSchema);
+const StudentDetails = mongoose.model("Student", StudentSchema);
 
 module.exports = StudentDetails;

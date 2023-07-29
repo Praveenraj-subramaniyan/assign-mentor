@@ -3,10 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+dotenv.config();
+mongoose.connect(process.env.MongoDb_Url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 var studentRouter = require('./routes/student');
-var usementorRouterrsRouter = require('./routes/mentor');
+var mentorRouter = require('./routes/mentor');
 
 var app = express();
 

@@ -10,6 +10,6 @@ const MentorSchema = new mongoose.Schema(
   { collection: "Mentor" }
 );
 
-const MentorDetails = mongoose.model("Moogoose", MentorSchema);
+const MentorDetails = mongoose.model("Mentor", MentorSchema);
 
 module.exports = MentorDetails;
