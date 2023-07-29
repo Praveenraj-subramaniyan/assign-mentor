@@ -29,9 +29,7 @@ router.post("/assign-mentor/:studentId", async (req, res) => {
     if (!mentor) {
       return res.status(404).json({ message: "Mentor not found." });
     }
-    if (student.mentor) {
-         student.PreviousMentor.push(student.mentor);
-    }
+    student.PreviousMentor.push(student.mentor);
     student.mentor = {
       id: mentor._id,
       name: mentor.name,
